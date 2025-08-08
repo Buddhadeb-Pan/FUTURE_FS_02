@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .fade-in {
+        animation: fadeIn 1s ease;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .slide-in {
+        animation: slideIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+      }
+      @keyframes slideIn {
+        from { opacity: 0; transform: scale(0.9) translateY(-40px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+      }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200">
+    <div class="w-full max-w-md p-8 rounded-2xl shadow-2xl bg-white/90 fade-in">
+        <h2 class="text-3xl font-bold text-center text-purple-700 mb-6 slide-in">Create Account</h2>
+        <div class="flex flex-col gap-2 mb-4">
+          <button type="button" id="googleRegBtn" class="w-full py-2 rounded-lg bg-red-500 text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-200 mb-2">Continue with Google</button>
+          <button type="button" id="microsoftRegBtn" class="w-full py-2 rounded-lg bg-blue-700 text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-200">Continue with Microsoft</button>
+        </div>
+        <form id="registerForm" class="flex flex-col gap-4 slide-in">
+            <input type="text" id="regName" placeholder="Name" required class="px-4 py-3 rounded-lg border border-purple-300 focus:ring-2 focus:ring-purple-400 transition" autocomplete="name">
+            <input type="email" id="regEmail" placeholder="Email" required class="px-4 py-3 rounded-lg border border-purple-300 focus:ring-2 focus:ring-purple-400 transition" autocomplete="username">
+            <input type="password" id="regPassword" placeholder="Password" required class="px-4 py-3 rounded-lg border border-purple-300 focus:ring-2 focus:ring-purple-400 transition" autocomplete="new-password">
+            <input type="tel" id="regPhone" placeholder="Phone Number" required class="px-4 py-3 rounded-lg border border-purple-300 focus:ring-2 focus:ring-purple-400 transition" autocomplete="tel">
+            <input type="text" id="regAddress" placeholder="Address (optional)" class="px-4 py-3 rounded-lg border border-purple-300 focus:ring-2 focus:ring-purple-400 transition" autocomplete="street-address">
+            <button type="submit" class="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-3 rounded-lg shadow-lg hover:scale-105 transition-transform duration-200">Register</button>
+        </form>
+        <p class="text-center mt-4 text-gray-600">Already have an account? <a href="login.html" class="text-purple-600 hover:underline">Login here</a></p>
+        <div id="regMessage" class="mt-4 text-center text-lg font-semibold text-green-600 slide-in"></div>
+    </div>
+    <script src="auth.js"></script>
+</body>
+</html> 
